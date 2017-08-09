@@ -1,39 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:h="http://xmlns.jcp.org/jsf/html">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Armoire des produits chimiques</title>
+	<title>
+		<h:outputText value="#{messages['produits.titre']}" />
+	</title>
 </h:head>
 <body>
 	<h:body>
 		<fieldset>
-			<legend>Nouveau produit chimique</legend>
+			<legend>
+				<h:outputText value="#{messages['produits.nouveauproduit']}" />
+			</legend>
 			<div align="center">
 				<h:form>
 
 					<br />
 
 					<br />
-					Nom du produit :<h:inputText value="#{chemical.name}" id="name"
+					<h:outputText value="#{messages['produits.nomduproduit']}" />
+					<h:inputText value="#{chemical.name}" id="name"
 						label="champ nom du produit">
 						<f:validateLength minimum="2" />
 					</h:inputText>
-					Formule chimique :<h:inputText value="#{chemical.formula}"
+					<h:outputText value="#{messages['produits.formule']}" />
+					<h:inputText value="#{chemical.formula}"
 						id="formule" label="champ formule chimique">
 						<f:validateLength minimum="2" />
 					</h:inputText>
 					<h:selectOneMenu value="#{chemical.imageUri}">
 						<f:selectItem itemValue="resources/img/corrosif.png"
-							itemLabel="corrosif" />
+							itemLabel="#{messages['produits.corrosif']}" />
 						<f:selectItem itemValue="resources/img/toxique.png"
-							itemLabel="toxique" />
+							itemLabel="#{messages['produits.toxique']}" />
 						<f:selectItem itemValue="resources/img/smiley.jpg"
-							itemLabel="sans risque" />
+							itemLabel="#{messages['produits.sans']}" />
 					</h:selectOneMenu>
-					<h:commandButton value="Valider" action="new" />
+					<h:commandButton value="#{messages['produits.validation']}" action="new" />
 					<br />
 					<h:message for="name" errorStyle="color:red" />
 					<br />
