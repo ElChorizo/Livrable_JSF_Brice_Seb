@@ -1,4 +1,4 @@
-Auteurs : Sébastien
+Auteurs : Brice/Sébastien
 Livrable_JSF_Brice_Seb
 
 L'application permet de voir la liste des produits chimiques et leur risque associé ou de créer un nouveau produit chimique avec son nom, sa formule chimique et son pictogramme de risque associé (corrosif, toxique ou sans risque).
