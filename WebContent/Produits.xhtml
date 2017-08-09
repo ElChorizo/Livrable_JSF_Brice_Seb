@@ -29,13 +29,13 @@
 					<h:outputText value="#{messages['produits.nomduproduit']}: " />
 
 					<h:inputText value="#{chemical.name}" id="name"
-						label="champ nom du produit">
+						label="#{messages['produits.labelnomproduit']}">
 						<f:validateLength minimum="2" />
 					</h:inputText>
 					<p/>
 					<h:outputText value="#{messages['produits.formule']}: " />
 					<h:inputText value="#{chemical.formula}"
-						id="formule" label="champ formule chimique">
+						id="formule" label="#{messages['produits.labelformuleproduit']}">
 
 						<f:validateLength minimum="2" />
 					</h:inputText>
