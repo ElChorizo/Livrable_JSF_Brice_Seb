@@ -12,6 +12,7 @@
 </h:head>
 <body>
 	<h:body>
+	<f:view locale="#{languageController.locale}"/>
 		<fieldset>
 			<legend>
 				<h:outputText value="#{messages['produits.nouveauproduit']}" />
@@ -22,25 +23,20 @@
 					<br />
 
 					<br />
-<<<<<<< HEAD
-					Nom du produit :<h:inputText value="#{chemical.name}" id="name"
-						label="champ nom du produit" required="true">
-						<f:validateLength minimum="2" />
-					</h:inputText>
-					Formule chimique :<h:inputText value="#{chemical.formula}"
-						id="formule" label="champ formule chimique" required="true">
-=======
-					<h:outputText value="#{messages['produits.nomduproduit']}" />
+
+					<h:outputText value="#{messages['produits.nomduproduit']}: " />
 					<h:inputText value="#{chemical.name}" id="name"
 						label="champ nom du produit">
 						<f:validateLength minimum="2" />
 					</h:inputText>
-					<h:outputText value="#{messages['produits.formule']}" />
+					<p/>
+					<h:outputText value="#{messages['produits.formule']}: " />
 					<h:inputText value="#{chemical.formula}"
 						id="formule" label="champ formule chimique">
->>>>>>> ed692186ddc492bdf8584e9339cb4ad5cc5b3bf3
+
 						<f:validateLength minimum="2" />
 					</h:inputText>
+					<p/>
 					<h:selectOneMenu value="#{chemical.imageUri}">
 						<f:selectItem itemValue="resources/img/corrosif.png"
 							itemLabel="#{messages['produits.corrosif']}" />
@@ -58,7 +54,9 @@
 
 				</h:form>
 	<h:form>
-				<h:commandButton value="Retour" action="index" />
+
+				<h:commandButton value="#{messages['new.retour']}" action="index"/>
+
 			</h:form>
 			</div>
 		</fieldset>

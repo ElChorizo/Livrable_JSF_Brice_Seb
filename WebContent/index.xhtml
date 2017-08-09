@@ -5,7 +5,7 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Choix</title>
+	<title><h:outputText value="#{messages['index.choix']}" /></title>
 </h:head>
 <h:body>
 	<div align="center">
@@ -14,10 +14,10 @@
 			<br />
 
 			<br />
-					Voir la liste des produits : <h:commandButton value="Liste"
+				<h:outputText value="#{messages['index.voirListe']}: " /> <h:commandButton value="#{messages['index.liste']}"
 				action="ListeProduits" />
 				<p/>
-					Ajouter un nouveau produit :<h:commandButton value="Nouveau"
+					<h:outputText value="#{messages['index.ajout']}: " /> <h:commandButton value="#{messages['index.nouveau']}"
 				action="Produits" />
 			<br />
 			<br />
