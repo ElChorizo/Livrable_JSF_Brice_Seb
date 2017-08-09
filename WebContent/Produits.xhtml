@@ -18,11 +18,11 @@
 
 					<br />
 					Nom du produit :<h:inputText value="#{chemical.name}" id="name"
-						label="champ nom du produit">
+						label="champ nom du produit" required="true">
 						<f:validateLength minimum="2" />
 					</h:inputText>
 					Formule chimique :<h:inputText value="#{chemical.formula}"
-						id="formule" label="champ formule chimique">
+						id="formule" label="champ formule chimique" required="true">
 						<f:validateLength minimum="2" />
 					</h:inputText>
 					<h:selectOneMenu value="#{chemical.imageUri}">
@@ -39,10 +39,11 @@
 					<br />
 					<h:message for="formule" errorStyle="color:red" />
 					<br />
-					<br/>
 
 				</h:form>
-
+	<h:form>
+				<h:commandButton value="Retour" action="index" />
+			</h:form>
 			</div>
 		</fieldset>
 	</h:body>
