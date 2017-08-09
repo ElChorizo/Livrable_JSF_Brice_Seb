@@ -8,6 +8,16 @@
 	<title>Liste des produits chimiques</title>
 </h:head>
 <body>
+<f:view locale="#{languageController.locale}"/>
 
+		<div align="center">
+		<br /> <br />
+		<h:dataTable value="#{ChemicalList.chemicalItems}" var="item" >
+			<h:column> #{item.name} </h:column>
+			<h:column>  - #{item.formula} - </h:column>
+			<h:column> #{item.danger} </h:column>
+		</h:dataTable>
+		</div>
+		
 </body>
 </html>

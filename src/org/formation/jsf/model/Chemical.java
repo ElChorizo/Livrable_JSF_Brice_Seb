@@ -12,15 +12,32 @@ public class Chemical {
 
 	private String name = "";
 	private String formula = "";
-	private String imageUri="resources/img/corrosif.png";
-
-	
+	private String imageUri="";
+	private String danger="";
 
 	
 	public Chemical() {
 		super();
-
 	}
+
+
+	public Chemical(String name, String formula, String danger) {
+		super();
+		this.name = name;
+		this.formula = formula;
+		this.danger = danger;
+	}
+
+	
+	public String getDanger() {
+		return danger;
+	}
+
+
+	public void setDanger(String danger) {
+		this.danger = danger;
+	}
+
 
 	public String getName() {
 		return name;
