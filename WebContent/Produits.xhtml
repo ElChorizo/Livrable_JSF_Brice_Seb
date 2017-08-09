@@ -13,6 +13,7 @@
 <body>
 <f:view locale="#{languageController.locale}"/>
 	<h:body>
+	<f:view locale="#{languageController.locale}"/>
 		<fieldset>
 			<legend>
 				<h:outputText value="#{messages['produits.nouveauproduit']}" />
@@ -24,17 +25,21 @@
 
 					<br />
 
-					<h:outputText value="#{messages['produits.nomduproduit']}" />
+
+					<h:outputText value="#{messages['produits.nomduproduit']}: " />
+
 					<h:inputText value="#{chemical.name}" id="name"
 						label="champ nom du produit">
 						<f:validateLength minimum="2" />
 					</h:inputText>
-					<h:outputText value="#{messages['produits.formule']}" />
+					<p/>
+					<h:outputText value="#{messages['produits.formule']}: " />
 					<h:inputText value="#{chemical.formula}"
 						id="formule" label="champ formule chimique">
 
 						<f:validateLength minimum="2" />
 					</h:inputText>
+					<p/>
 					<h:selectOneMenu value="#{chemical.imageUri}">
 						<f:selectItem itemValue="resources/img/corrosif.png"
 							itemLabel="#{messages['produits.corrosif']}" />
@@ -52,7 +57,9 @@
 
 				</h:form>
 	<h:form>
-				<h:commandButton value="Retour" action="index" />
+
+				<h:commandButton value="#{messages['new.retour']}" action="index"/>
+
 			</h:form>
 			</div>
 		</fieldset>
