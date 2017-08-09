@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Armoire des produits chimiques</title>
+</h:head>
+<body>
+	<h:body>
+		<fieldset>
+			<legend>Nouveau produit chimique</legend>
+			<div align="center">
+				<h:form>
+
+					<br />
+
+					<br />
+					Nom du produit :<h:inputText value="#{chemical.name}" id="name"
+						label="champ nom du produit">
+						<f:validateLength minimum="2" />
+					</h:inputText>
+					Formule chimique :<h:inputText value="#{chemical.formula}"
+						id="formule" label="champ formule chimique">
+						<f:validateLength minimum="2" />
+					</h:inputText>
+					<h:selectOneMenu value="#{chemical.imageUri}">
+						<f:selectItem itemValue="resources/img/corrosif.png"
+							itemLabel="corrosif" />
+						<f:selectItem itemValue="resources/img/toxique.png"
+							itemLabel="toxique" />
+						<f:selectItem itemValue="resources/img/smiley.jpg"
+							itemLabel="sans risque" />
+					</h:selectOneMenu>
+					<h:commandButton value="Valider" action="new" />
+					<br />
+					<h:message for="name" errorStyle="color:red" />
+					<br />
+					<h:message for="formule" errorStyle="color:red" />
+					<br />
+					<br/>
+
+				</h:form>
+
+			</div>
+		</fieldset>
+	</h:body>
+</body>
+</html>
